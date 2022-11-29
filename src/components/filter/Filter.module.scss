@@ -1,0 +1,54 @@
+@import '../../sass/abstracts/variables.scss';
+
+.root {
+  padding: 1rem 2rem;
+  @media screen and (max-width: 500px) {
+    padding: 1rem 0;
+  }
+}
+
+.title {
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.text {
+  display: inline-block;
+  text-decoration: none;
+  color: $very-dark-blue-text;
+  font-size: 1.6rem;
+  font-weight: 200;
+  cursor: pointer;
+  &:hover {
+    color: $color-yellow;
+  }
+  &:active {
+    color: $very-dark-blue-text;
+  }
+}
+
+.active {
+  transform: scale(1.1);
+  font-weight: 400;
+  color: $very-dark-blue-text;
+}
+
+.btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: $color-yellow;
+  transition: all ease 0.2s;
+  &:hover {
+    background-color: #c59005;
+  }
+  &:active {
+    color: $white;
+  }
+}
