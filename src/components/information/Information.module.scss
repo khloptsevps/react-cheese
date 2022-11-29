@@ -1,0 +1,72 @@
+@import '../../sass/abstracts/variables.scss';
+
+.info {
+  display: flex;
+  @media screen and (max-width: 950px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}
+.contacts {
+  margin-right: 3rem;
+  & a {
+    text-decoration: none;
+    color: $very-dark-blue-text;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: right;
+    transition: all ease 0.2s;
+    &:hover {
+      color: $color-yellow;
+    }
+  }
+  @media screen and (max-width: 950px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.address {
+  @media screen and (max-width: 950px) {
+    margin-bottom: 1rem;
+  }
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.whatsapp {
+  margin-right: 1rem;
+}
+
+.icon {
+  height: 3rem;
+}
+
+.phone {
+  margin-bottom: 0.7rem;
+}
+.email {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.info {
+  font-size: 1.6rem;
+  font-weight: 300;
+  @media screen and (max-width: 830px) {
+    font-size: 1.4rem;
+  }
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  @media screen and (max-width: 830px) {
+    font-size: 1.5rem;
+  }
+}

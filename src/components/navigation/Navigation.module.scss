@@ -1,0 +1,29 @@
+@import '../../sass/abstracts/variables.scss';
+
+.root {
+  margin-bottom: 2rem;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.item {
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+}
+.link {
+  text-decoration: none;
+  color: $very-dark-blue-text;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: all ease 0.2s;
+  &:hover {
+    color: $color-yellow;
+  }
+  @media screen and (max-width: 540px) {
+    font-size: 1.4rem;
+  }
+}

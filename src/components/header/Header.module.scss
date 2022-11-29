@@ -1,0 +1,62 @@
+@import '../../sass/abstracts/variables.scss';
+
+.root {
+  padding: 1rem 8rem;
+  background-color: $very-dark-gray-bcg;
+  box-shadow: 0 0.5rem 1rem 0 rgba(34, 60, 80, 0.2);
+  @media screen and (max-width: 950px) {
+    padding: 1rem 4rem;
+  }
+
+  &_white {
+    background-color: $white;
+    color: $very-dark-blue-text;
+  }
+  @media screen and (max-width: 720px) {
+    padding: 2.5rem 4rem;
+  }
+  @media screen and (max-width: 720px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  border-top: 1px solid rgba($very-dark-blue-text, 0.25);
+  // border-bottom: 1px solid rgba($very-dark-blue-text, 0.25);
+  @media screen and (max-width: 540px) {
+    flex-direction: column-reverse;
+    padding: 0.5rem 0;
+  }
+}
+
+.cart {
+  display: flex;
+}
+
+.line {
+  border-right: 1px solid rgba($very-dark-blue-text, 0.25);
+  margin: 0 2rem;
+  @media screen and (max-width: 540px) {
+    border: none;
+    border-top: 1px solid rgba(17, 21, 23, 0.25);
+    margin: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.top {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 540px) {
+    flex-direction: column;
+  }
+}
+
+.logo {
+  height: 15rem;
+}

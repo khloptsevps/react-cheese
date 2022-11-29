@@ -1,0 +1,41 @@
+.button {
+  position: relative;
+  padding: 1rem;
+  padding-left: 3rem;
+  outline: none;
+  border-radius: 0.5rem;
+  span {
+    @media screen and (max-width: 385px) {
+      font-size: 1rem;
+    }
+  }
+  &__icon {
+    position: absolute;
+    top: 0.6rem;
+    left: 0.7rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  &_white {
+    color: $white;
+    outline: 0.1rem solid $white;
+    &:hover {
+      background-color: $white;
+      color: $very-dark-blue-text;
+    }
+  }
+  &_dark {
+    color: $very-dark-blue-text;
+    border: 0.1rem solid $dark-blue;
+    &:hover {
+      background-color: $dark-blue;
+      border-color: $dark-blue;
+      color: $white;
+    }
+    &:active {
+      color: $white;
+      background-color: $dark-gray;
+      border-color: $very-dark-blue;
+    }
+  }
+}

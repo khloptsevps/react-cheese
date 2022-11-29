@@ -1,0 +1,27 @@
+.sort {
+  display: flex;
+  justify-content: flex-end;
+  &__title {
+    font-weight: 200;
+    margin-right: 5rem;
+    font-size: 2rem;
+  }
+  &__list {
+    display: flex;
+  }
+  &__item {
+    transition: all ease 0.2s;
+    font-weight: 200;
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+    a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: $very-dark-blue-text;
+    }
+    &_active {
+      font-weight: 600;
+    }
+  }
+}

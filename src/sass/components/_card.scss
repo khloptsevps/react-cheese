@@ -1,0 +1,67 @@
+.card {
+  padding-bottom: 2.5rem;
+  margin-bottom: 4rem;
+  width: 25rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: $white;
+  box-shadow: 1px 2px 20px -1px rgba(34, 60, 80, 0.2);
+  &:not(:last-child) {
+    margin-right: 4rem;
+  }
+  &__description {
+    padding: 0 1.5rem;
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__text {
+    display: block;
+    &_top {
+      margin-bottom: 0.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    &_bottom {
+      font-size: 1.4rem;
+      font-weight: 200;
+    }
+  }
+  &__count {
+    top: -1.5rem;
+    right: -1rem;
+  }
+  &__button {
+    position: relative;
+
+    button {
+      border-radius: 0.5rem;
+      padding: 1rem;
+      border: none;
+      background-color: $color-yellow;
+      &:hover {
+        background-color: #c59005;
+      }
+      &:active {
+        background-color: $color-yellow;
+        color: $white;
+      }
+    }
+    img {
+      height: 3rem;
+    }
+  }
+}

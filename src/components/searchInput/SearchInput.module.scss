@@ -1,0 +1,57 @@
+@import '../../sass/abstracts/variables.scss';
+
+.root {
+  position: relative;
+  min-width: 70rem;
+
+  @media screen and (max-width: 720px) {
+    width: fit-content;
+    margin-bottom: 2rem;
+  }
+  @media screen and (max-width: 1110px) {
+    min-width: 50rem;
+  }
+  @media screen and (max-width: 830px) {
+    min-width: 60%;
+    margin-bottom: 0;
+  }
+  @media screen and (max-width: 540px) {
+    min-width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+.input {
+  min-width: 100%;
+  padding: 1.7rem 4rem;
+  font-size: 1.8rem;
+  border: transparent 1px solid;
+  border-radius: 0.5rem;
+  box-shadow: 1px 2px 20px -1px rgba(34, 60, 80, 0.2);
+  transition: all ease 0.2s;
+  &:focus {
+    border: $color-yellow 1px solid;
+  }
+  @media screen and (max-width: 450px) {
+    width: 78vw;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  top: 1.6rem;
+  left: 1.2rem;
+  height: 2.5rem;
+  opacity: 0.5;
+}
+
+.resetIcon {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.2rem;
+  height: 2.5rem;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+// width: 78vw;

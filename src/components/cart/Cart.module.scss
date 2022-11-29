@@ -1,0 +1,46 @@
+@import '../../sass/abstracts/variables.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  display: inline-block;
+  font-size: 5rem;
+}
+
+.link {
+  display: inline-flex;
+  text-decoration: none;
+  color: $very-dark-blue-text;
+}
+
+.iconBox {
+  position: relative;
+  margin-right: 2.5rem;
+}
+
+.icon {
+  height: 2.8rem;
+}
+
+.count {
+  position: absolute;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  background-color: #ffe405;
+  top: -1.6rem;
+  right: -1.8rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 600;
+}

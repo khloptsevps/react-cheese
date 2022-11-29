@@ -1,0 +1,42 @@
+.filter {
+  padding: 1rem 2rem;
+  &__title {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $very-dark-blue-text;
+    font-size: 1.6rem;
+    font-weight: 200;
+    &:hover {
+      color: $color-yellow;
+    }
+    &:active {
+      color: $very-dark-blue-text;
+    }
+    &_active {
+      font-size: 2rem;
+      font-weight: 400;
+      color: $very-dark-blue-text;
+    }
+  }
+  &__clear {
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: $color-yellow;
+    transition: all ease 0.2s;
+    &:hover {
+      background-color: #c59005;
+    }
+    &:active {
+      color: $white;
+    }
+  }
+}
