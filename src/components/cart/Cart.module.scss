@@ -32,6 +32,10 @@
 }
 
 .count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   position: absolute;
   padding: 0.4rem 0.8rem;
   font-weight: 600;
