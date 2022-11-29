@@ -1,0 +1,46 @@
+@import '../../sass/abstracts/variables.scss';
+
+.root {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 4rem;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+  }
+}
+
+.title {
+  font-weight: 200;
+  margin-right: 5rem;
+  font-size: 2rem;
+  @media screen and (max-width: 500px) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.list {
+  display: flex;
+}
+
+.item {
+  transition: all ease 0.2s;
+  font-weight: 200;
+  &:not(:last-child) {
+    margin-right: 2rem;
+  }
+  span {
+    font-size: 2rem;
+    text-decoration: none;
+    color: $very-dark-blue-text;
+    cursor: pointer;
+    &:hover {
+      color: $color-yellow;
+    }
+  }
+}
+
+.active {
+  font-weight: 600;
+  transform: scale(1.1);
+}
