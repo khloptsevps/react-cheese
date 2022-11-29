@@ -26,16 +26,3 @@
     align-items: baseline;
   }
 }
-
-.box {
-  display: flex;
-  align-items: center;
-  &__title {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-right: 2.5rem;
-  }
-  &__count {
-    font-size: 2rem;
-  }
-}
