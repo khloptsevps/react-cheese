@@ -7,9 +7,9 @@
 Стек:
 
 - React
-<!-- - React router
-- Redux-toolkit -->
-
+- React router 
+- Redux-toolkit 
+- Firebase 
 ---
 
 ## Системные требования / System requirements
