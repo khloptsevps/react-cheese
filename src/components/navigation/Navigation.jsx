@@ -1,23 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styles from './Navigation.module.scss';
 
 const Navigation = () => (
   <nav className={styles.root}>
     <ul className={styles.list}>
       <li className={styles.item}>
-        <a href="/about" className={styles.link}>
+        <Link to="/about" className={styles.link}>
           O HAC
-        </a>
+        </Link>
       </li>
       <li className={styles.item}>
-        <a href="/delivery" className={styles.link}>
+        <Link to="/delivery" className={styles.link}>
           ДОСТАВКА И ОПЛАТА
-        </a>
+        </Link>
       </li>
       <li className={styles.item}>
-        <a href="/contacts" className={styles.link}>
+        <Link to="/contacts" className={styles.link}>
           КОНТАКТЫ
-        </a>
+        </Link>
       </li>
     </ul>
   </nav>
