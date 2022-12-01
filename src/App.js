@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import Header from './components/header';
 import Home from './pages/home/Home';
+import NotFound from './pages/notFound/NotFound';
 
 const Layout = () => (
   <React.Fragment>
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    errorElement: <div>Станица не существует, пока что...</div>,
+    errorElement: <NotFound />,
     children: [
       {
         path: '/',
