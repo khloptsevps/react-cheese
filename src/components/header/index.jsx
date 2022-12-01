@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import logo from '../../assets/img/logo.png';
 
@@ -14,9 +14,9 @@ const Header = () => (
   <header className={styles.root}>
     <div className="header__content">
       <div className={styles.top}>
-        <a href="#" className="header__link">
+        <Link to="/" className="header__link">
           <img src={logo} alt="logo" className={styles.logo} />
-        </a>
+        </Link>
         <Information />
       </div>
       <Navigation />
