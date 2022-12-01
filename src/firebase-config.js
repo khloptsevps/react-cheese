@@ -7,7 +7,7 @@ import { getAnalytics } from 'firebase/analytics';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyBO-siB49NDdMT7M9v7m0sa9p-79PtvMLg',
+  apiKey: '',
   authDomain: 'react-cheese.firebaseapp.com',
   projectId: 'react-cheese',
   storageBucket: 'react-cheese.appspot.com',
