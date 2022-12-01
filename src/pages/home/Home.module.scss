@@ -1,3 +1,9 @@
 .content {
   padding: 5rem 8rem;
+  @media screen and (max-width: 950px) {
+    padding: 1rem 4rem;
+  }
+  @media screen and (max-width: 720px) {
+    padding: 2rem 1rem;
+  }
 }
