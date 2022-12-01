@@ -14,7 +14,7 @@ const Filter = () => {
   ];
   return (
     <div className={styles.root}>
-      <h2 className={styles.title}>Продукция</h2>
+      <h2 className={styles.title}>Категории</h2>
       <ul className="mb-50">
         {categories.map(({ id, name }) => {
           const activeCategory = id === active ? styles.active : '';
