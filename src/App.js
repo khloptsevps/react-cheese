@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
-    errorElement: <div>Станицы не существует, пока что...</div>,
+    errorElement: <div>Станица не существует, пока что...</div>,
     children: [
       {
         path: '/',
