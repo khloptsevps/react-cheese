@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
@@ -6,10 +5,10 @@ import Header from './components/header';
 import Home from './pages/home/Home';
 
 const Layout = () => (
-  <div>
+  <React.Fragment>
     <Header />
     <Outlet />
-  </div>
+  </React.Fragment>
 );
 
 const router = createBrowserRouter([
