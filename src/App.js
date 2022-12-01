@@ -1,20 +1,34 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import Header from './components/header';
-import Title from './components/title/Title';
-import Sort from './components/sort/Sort';
-import Filter from './components/filter/Filter';
+import Home from './pages/home/Home';
+
+const Layout = () => (
+  <div>
+    <Header />
+    <Outlet />
+  </div>
+);
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    errorElement: <div>Станицы не существует, пока что...</div>,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+      },
+    ],
+  },
+]);
 
 const App = () => (
   <div className="wrapper">
-    <Header />
-    <div className="content">
-      <div className="container">
-        <Title />
-        <Sort />
-        <Filter />
-      </div>
-    </div>
+    <RouterProvider router={router} />
   </div>
 );
 
