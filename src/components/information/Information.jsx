@@ -11,7 +11,7 @@ const Information = () => (
         <a href="tel:+79999999999">+7 (999) 666-66-66</a>
       </div>
       <div className={styles.email}>
-        <a href="mailto:test@test.com">test@testhell.ru</a>
+        <a href="mailto:craft_lab_khv@mail.ru">craft_lab_khv@mail.ru</a>
       </div>
       <div className={styles.icons}>
         <div className={styles.whatsapp}>
@@ -43,13 +43,14 @@ const Information = () => (
       </div>
     </div>
     <div className={styles.address}>
-      <p className={styles.title}>Хабаровск, Какая-то улица, д.99 оф. 666</p>
-      <p className={styles.info}>
-        Время работы: Пн-Вс с 00:00 до 00:00
+      <p className={styles.title}>
+        Хабаровский край
         <br />
-        Принимаем заказы круглосуточно,
-        <br />
-        доставляем в рабочее время
+        c. Федоровка, ул. Костиной 8а/2
+      </p>
+      <p className={styles.info}>Принимаем заказы круглосуточно.</p>
+      <p className={styles.delivery}>
+        Доставка: вторник, четверг с 10:00 до 20:00
       </p>
     </div>
   </div>
