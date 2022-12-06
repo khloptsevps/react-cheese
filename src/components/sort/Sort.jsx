@@ -14,15 +14,15 @@ const Sort = () => {
       <div className={styles.title}>Сортировать по:</div>
       <ul className={styles.list}>
         {sortMethod.map(({ id, name }) => {
-          const active = id === activeSort ? styles.active : null;
+          const active = id === activeSort ? styles.active : '';
           return (
             <li
-              className={`${styles.item} ${active}`}
+              className={styles.item}
               key={id}
               aria-hidden="true"
               onClick={() => setActiveSort(id)}
             >
-              <span>{name}</span>
+              <span className={active}>{name}</span>
             </li>
           );
         })}
