@@ -9,8 +9,10 @@ import styles from './Home.module.scss';
 
 const HomePage = () => (
   <div className={styles.content}>
-    <Title />
-    <Sort />
+    <div className={styles.top}>
+      <Title />
+      <Sort />
+    </div>
     <div className={styles.products}>
       <Filter />
       <div className={styles.cards}>

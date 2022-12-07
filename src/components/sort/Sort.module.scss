@@ -15,18 +15,26 @@
   margin-right: 5rem;
   font-size: 2rem;
   @media screen and (max-width: 500px) {
+    margin: 0;
     margin-bottom: 0.5rem;
+    text-align: center;
   }
 }
 
 .list {
   display: flex;
+  @media screen and (max-width: 500px) {
+    justify-content: space-around;
+  }
 }
 
 .item {
   font-weight: 200;
   &:not(:last-child) {
     margin-right: 2rem;
+    @media screen and (max-width: 500px) {
+      margin: 0;
+    }
   }
   span {
     font-size: 2rem;
