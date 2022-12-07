@@ -7,3 +7,18 @@
     padding: 2rem 1rem;
   }
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  justify-content: center;
+  flex: 2;
+}
+
+.products {
+  display: flex;
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+}
