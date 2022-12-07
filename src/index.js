@@ -19,6 +19,16 @@ const theme = createTheme({
     htmlFontSize: 10,
     fontSize: 16,
   },
+  components: {
+    MuiCardMedia: {
+      styleOverrides: {
+        root: {
+          height: 250,
+          objectFit: 'cover',
+        },
+      },
+    },
+  },
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
