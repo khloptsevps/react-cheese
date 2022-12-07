@@ -1,14 +1,12 @@
 .card {
   padding-bottom: 2.5rem;
-  margin-bottom: 4rem;
+
   width: 25rem;
   border-radius: 0.5rem;
   overflow: hidden;
   background-color: $white;
   box-shadow: 1px 2px 20px -1px rgba(34, 60, 80, 0.2);
-  &:not(:last-child) {
-    margin-right: 4rem;
-  }
+
   &__description {
     padding: 0 1.5rem;
   }
