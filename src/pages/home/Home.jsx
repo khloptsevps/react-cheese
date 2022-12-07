@@ -3,7 +3,7 @@ import React from 'react';
 import Title from '../../components/title/Title';
 import Sort from '../../components/sort/Sort';
 import Filter from '../../components/filter/Filter';
-import ProductCard from '../../components/card/productCard';
+import ProductCard from '../../components/card/ProductCard';
 
 import styles from './Home.module.scss';
 
