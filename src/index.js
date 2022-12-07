@@ -19,6 +19,11 @@ const theme = createTheme({
     htmlFontSize: 10,
     fontSize: 16,
   },
+  palette: {
+    yellow: {
+      main: '#f4b204',
+    },
+  },
   components: {
     MuiCardMedia: {
       styleOverrides: {
