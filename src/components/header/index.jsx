@@ -14,7 +14,7 @@ const Header = () => (
   <header className={styles.root}>
     <div className="header__content">
       <div className={styles.top}>
-        <Link to="/" className="header__link">
+        <Link to="/" className={styles.link}>
           <img src={logo} alt="logo" className={styles.logo} />
         </Link>
         <Information />
