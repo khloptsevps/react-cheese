@@ -1,21 +1,35 @@
 @import '../../sass/abstracts/variables.scss';
 
 .root {
-  padding: 1rem 2rem;
-  @media screen and (max-width: 500px) {
-    padding: 1rem 4.2rem;
+  padding: 1.5rem 0;
+  overflow: auto;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+  // background-color: hsl(0, 0%, 100%);
+  // @media screen and (max-width: 500px) {
+  //   padding: 1rem 4.2rem;
+  // }
+}
+.list {
+  display: flex;
+  flex-wrap: nowrap;
+
+  li {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+    & span {
+      @media screen and (max-width: 767px) {
+        font-size: 1.6rem;
+      }
+    }
   }
 }
 
 .title {
   font-size: 2.4rem;
   margin-bottom: 3rem;
-}
-
-.item {
-  &:not(:last-child) {
-    margin-bottom: 2rem;
-  }
 }
 
 .text {
@@ -35,6 +49,7 @@
 
 .active {
   transform: scale(1.1);
+  font-size: 1.6rem;
   font-weight: 400;
   color: $very-dark-blue-text;
 }

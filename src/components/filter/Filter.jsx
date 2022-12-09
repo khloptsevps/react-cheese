@@ -1,41 +1,37 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
+import Chip from '@mui/material/Chip';
 
 import styles from './Filter.module.scss';
 
 const Filter = () => {
   const [active, setActive] = useState(0);
   const categories = [
+    { id: 0, name: 'Все' },
     { id: 1, name: 'Сыры молодые' },
     { id: 2, name: 'Сыры твердые' },
     { id: 3, name: 'Сыры п.твердые' },
     { id: 4, name: 'Молочная продукция' },
   ];
+
   return (
     <div className={styles.root}>
-      <h2 className={styles.title}>Категории</h2>
-      <ul className="mb-50">
+      <ul className={styles.list}>
         {categories.map(({ id, name }) => {
-          const activeCategory = id === active ? styles.active : '';
+          const variant = id === active ? 'primary' : 'outlined';
           return (
             <li key={id} className={styles.item}>
-              <span
+              <Chip
+                label={name}
+                variant={variant}
+                color="primary"
                 onClick={() => setActive(id)}
-                className={`${styles.text} ${activeCategory}`}
-                aria-hidden="true"
-              >
-                {name}
-              </span>
+              />
             </li>
           );
         })}
       </ul>
-      <div className="filter__bottom">
-        <button onClick={() => setActive(0)} className={styles.btn}>
-          Очистить фильтр
-        </button>
-      </div>
     </div>
   );
 };
