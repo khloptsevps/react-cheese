@@ -1,19 +1,30 @@
 .content {
-  padding: 5rem 8rem;
-  @media screen and (max-width: 950px) {
-    padding: 1rem 4rem;
+  padding-bottom: 8rem;
+  .top {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    @media screen and (max-width: 767px) {
+      flex-direction: column-reverse;
+    }
   }
-  @media screen and (max-width: 720px) {
-    padding: 2rem 1rem;
-  }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 5rem;
-  justify-content: center;
-  flex: 2;
+  row-gap: 3rem;
+  justify-content: space-around;
+  @media screen and (max-width: 730px) {
+    column-gap: 1rem;
+  }
 }
 
 .products {

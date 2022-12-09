@@ -9,19 +9,21 @@ import styles from './Home.module.scss';
 
 const HomePage = () => (
   <div className={styles.content}>
-    <div className={styles.top}>
-      <Title />
-      <Sort />
-    </div>
-    <div className={styles.products}>
-      <Filter />
-      <div className={styles.cards}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+    <div className={styles.container}>
+      <div className={styles.top}>
+        <Filter />
+        <Sort />
+      </div>
+      <div className={styles.title}>
+        <Title />
+        <div className={styles.cards}>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </div>
       </div>
     </div>
   </div>
