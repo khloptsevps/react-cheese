@@ -11,13 +11,7 @@ import { styled } from '@mui/material/styles';
 
 import styles from './ProductCard.module.scss';
 
-const photos = {
-  p1: 'https://firebasestorage.googleapis.com/v0/b/craft-lab-khv.appspot.com/o/products%2Fadygeiski-1.png?alt=media&token=f7e4255e-898c-4d1c-8967-341c16e70620',
-  p2: 'https://firebasestorage.googleapis.com/v0/b/craft-lab-khv.appspot.com/o/products%2Fadygeiski.JPG?alt=media&token=cc0ab393-d301-40cf-9bc6-fb61ba3e7f0e',
-  p3: 'https://firebasestorage.googleapis.com/v0/b/craft-lab-khv.appspot.com/o/products%2Fknolle.JPG?alt=media&token=bb1fa801-e52e-48cd-a8ee-bfc75c4e48ca',
-};
-
-const ProductCard = () => {
+const ProductCard = ({ name, description, imageLink, price }) => {
   const [count, setCount] = React.useState(0);
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -35,21 +29,25 @@ const ProductCard = () => {
 
   return (
     <Card sx={{ maxWidth: 300 }} className={styles.card}>
-      <CardMedia component="img" image={photos.p3} alt="green iguana" />
+      <CardMedia
+        component="img"
+        image={imageLink}
+        alt={name}
+        // sx={{ padding: '0.8rem', borderRadius: '1.2rem' }}
+      />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
-          Адыгейский
+          {name}
         </Typography>
         <Typography color="text.secondary" variant="p">
-          Мягкий молодой сыр белого цвета, часто с кремовым оттенком. У него
-          кисломолочный, чуть солоноватый вкус и нежная, мягкая консистенция
+          {description}
         </Typography>
       </CardContent>
       <CardActions
         sx={{ padding: '8px 16px', justifyContent: 'space-between' }}
       >
         <div className={styles.text}>
-          <span className={styles.top}>от 300 руб.</span>
+          <span className={styles.top}>от {price} ₽</span>
           <span className={styles.bottom}>за 100 гр</span>
         </div>
         <Button
