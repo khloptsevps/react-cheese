@@ -22,11 +22,10 @@ const ProductCard = () => {
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-      right: -3,
+      right: -1,
       top: 13,
       border: `1px solid ${theme.palette.background.paper}`,
-      padding: '1px',
-      color: '#000',
+      padding: '6px',
     },
   }));
 
@@ -35,7 +34,7 @@ const ProductCard = () => {
   };
 
   return (
-    <Card sx={{ maxWidth: 320 }}>
+    <Card sx={{ maxWidth: 300 }} className={styles.card}>
       <CardMedia component="img" image={photos.p3} alt="green iguana" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
@@ -46,7 +45,9 @@ const ProductCard = () => {
           кисломолочный, чуть солоноватый вкус и нежная, мягкая консистенция
         </Typography>
       </CardContent>
-      <CardActions sx={{ justifyContent: 'space-around' }}>
+      <CardActions
+        sx={{ padding: '8px 16px', justifyContent: 'space-between' }}
+      >
         <div className={styles.text}>
           <span className={styles.top}>от 300 руб.</span>
           <span className={styles.bottom}>за 100 гр</span>
@@ -60,10 +61,7 @@ const ProductCard = () => {
           variant="outlined"
           onClick={handleAdd}
         >
-          <Typography sx={{ marginRight: '1rem' }} variant="button">
-            Добавить
-          </Typography>
-          <StyledBadge badgeContent={count} color="yellow">
+          <StyledBadge badgeContent={count} color="warning">
             <ShoppingCartIcon />
           </StyledBadge>
         </Button>
@@ -73,5 +71,3 @@ const ProductCard = () => {
 };
 
 export default ProductCard;
-
-// TODO продолжить работу над карточкой
