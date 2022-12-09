@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import styles from './Sort.module.scss';
 
@@ -11,22 +13,19 @@ const Sort = () => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.title}>Сортировать по:</div>
-      <ul className={styles.list}>
-        {sortMethod.map(({ id, name }) => {
-          const active = id === activeSort ? styles.active : '';
-          return (
-            <li
-              className={styles.item}
-              key={id}
-              aria-hidden="true"
-              onClick={() => setActiveSort(id)}
-            >
-              <span className={active}>{name}</span>
-            </li>
-          );
-        })}
-      </ul>
+      <div className={styles.label}>
+        <ArrowDropDownIcon />
+        <span className={styles.title}>Сортировка по:</span>
+        <span
+          className={styles.condition}
+          onClick={() => {}}
+          role="button"
+          tabIndex={0}
+          aria-hidden="true"
+        >
+          цене
+        </span>
+      </div>
     </div>
   );
 };
