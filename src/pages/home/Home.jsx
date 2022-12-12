@@ -1,7 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { selectProducts } from '../../redux/slices/productSlice';
+import { selectProducts, fetchProducts } from '../../redux/slices/productSlice';
+import { selectFilter } from '../../redux/slices/filterSlice';
 
 import Title from '../../components/title/Title';
 import Sort from '../../components/sort/Sort';
@@ -14,12 +15,22 @@ import styles from './Home.module.scss';
 
 const HomePage = () => {
   const { items, process } = useSelector(selectProducts);
+  const { sort } = useSelector(selectFilter);
+
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    const { sortBy, order } = sort;
+    dispatch(fetchProducts({ sortBy, order }));
+    window.scrollTo(0, 0);
+  }, [dispatch, sort]);
+
   return (
     <div className={styles.content}>
       <div className={styles.container}>
         <div className={styles.top}>
           {/* <Filter /> */}
-          <Sort />
+          <Sort sort={sort} />
         </div>
         <div className={styles.title}>
           <Title />
