@@ -5,7 +5,7 @@ import { selectProducts } from '../../redux/slices/productSlice';
 
 import Title from '../../components/title/Title';
 import Sort from '../../components/sort/Sort';
-import ProductCard from '../../components/card/ProductCard';
+// import ProductCard from '../../components/card/ProductCard';
 import Skeleton from '../../components/skeletons/Skeleton';
 
 import styles from './Home.module.scss';
@@ -25,7 +25,7 @@ const HomePage = () => {
           <Title />
           <div className={styles.cards}>
             {process === 'success'
-              ? items.map((item) => <ProductCard key={item.id} {...item} />)
+              ? items.map((item) => <Skeleton key={item.id} {...item} />)
               : Array(6)
                   .fill()
                   .map((_item, i) => <Skeleton key={i} />)}
