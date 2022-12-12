@@ -1,8 +1,5 @@
 import React from 'react';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-
-import { fetchAllProducts } from './redux/slices/productSlice';
 
 import Header from './components/header';
 import Home from './pages/home/Home';
@@ -29,18 +26,10 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App = () => {
-  const dispach = useDispatch();
-
-  React.useEffect(() => {
-    dispach(fetchAllProducts());
-  });
-
-  return (
-    <div className="wrapper">
-      <RouterProvider router={router} />
-    </div>
-  );
-};
+const App = () => (
+  <div className="wrapper">
+    <RouterProvider router={router} />
+  </div>
+);
 
 export default App;
