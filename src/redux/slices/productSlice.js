@@ -1,23 +1,30 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 
 import db from '../../firebase-config';
-import firebaseDocsToArray from '../../utils';
+import firebaseDocsToObjects from '../../utils';
 
 const productsCollection = collection(db, 'products');
 
-export const fetchAllProducts = createAsyncThunk(
-  'productSlice/fetchAllProducts',
-  async () => {
-    const productsSnapshot = await getDocs(productsCollection);
-    const products = firebaseDocsToArray(productsSnapshot);
-    return products;
+export const fetchProducts = createAsyncThunk(
+  'productSlice/fetchProducts',
+  async ({ sortBy, order }) => {
+    try {
+      const request = query(productsCollection, orderBy(sortBy, order));
+      const productsSnapshot = await getDocs(request);
+      const products = firebaseDocsToObjects(productsSnapshot, sortBy, order);
+      return products;
+    } catch (error) {
+      // TODO: handle error
+      console.log(error);
+      return [];
+    }
   },
 );
 
 const initialState = {
   items: [],
-  process: 'loading', // filed | success
+  process: 'loading', // failed | success
 };
 
 const productSlice = createSlice({
@@ -25,16 +32,16 @@ const productSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [fetchAllProducts.pending]: (state) => {
+    [fetchProducts.pending]: (state) => {
       const newState = { ...state, process: 'loading', items: [] };
       return newState;
     },
-    [fetchAllProducts.fulfilled]: (state, { payload }) => {
+    [fetchProducts.fulfilled]: (state, { payload }) => {
       const newState = { ...state, process: 'success', items: payload };
       return newState;
     },
-    [fetchAllProducts.rejected]: (state) => {
-      const newState = { ...state, process: 'filed', items: [] };
+    [fetchProducts.rejected]: (state) => {
+      const newState = { ...state, process: 'failed', items: [] };
       return newState;
     },
   },
