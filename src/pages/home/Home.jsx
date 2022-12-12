@@ -5,11 +5,12 @@ import { selectProducts } from '../../redux/slices/productSlice';
 
 import Title from '../../components/title/Title';
 import Sort from '../../components/sort/Sort';
-// import Filter from '../../components/filter/Filter';
-import ProductCard from '../../components/card/ProductCard.jsx';
+import ProductCard from '../../components/card/ProductCard';
 import Skeleton from '../../components/skeletons/Skeleton';
 
 import styles from './Home.module.scss';
+
+// import Filter from '../../components/filter/Filter';
 
 const HomePage = () => {
   const { items, process } = useSelector(selectProducts);
