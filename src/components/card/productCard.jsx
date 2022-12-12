@@ -11,7 +11,7 @@ import { styled } from '@mui/material/styles';
 
 import styles from './ProductCard.module.scss';
 
-const ProductCard = ({ name, description, imageLink, price }) => {
+const ProductCard = ({ name, imageLink, price, oneByOne }) => {
   const [count, setCount] = React.useState(0);
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -28,42 +28,49 @@ const ProductCard = ({ name, description, imageLink, price }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 300 }} className={styles.card}>
+    <Card sx={{ width: 300, height: 380 }} className={styles.card}>
       <CardMedia
         component="img"
         image={imageLink}
         alt={name}
         // sx={{ padding: '0.8rem', borderRadius: '1.2rem' }}
+        sx={{ height: 200 }}
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {name}
-        </Typography>
-        <Typography color="text.secondary" variant="p">
+      <div>
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {name}
+          </Typography>
+          {/* <Typography color="text.secondary" variant="p">
           {description}
-        </Typography>
-      </CardContent>
-      <CardActions
-        sx={{ padding: '8px 16px', justifyContent: 'space-between' }}
-      >
-        <div className={styles.text}>
-          <span className={styles.top}>от {price} ₽</span>
-          <span className={styles.bottom}>за 100 гр</span>
-        </div>
-        <Button
-          sx={{
-            borderRadius: '1rem',
-            color: '#ea8e2a',
-          }}
-          color="yellow"
-          variant="outlined"
-          onClick={handleAdd}
+        </Typography> */}
+        </CardContent>
+        <CardActions
+          sx={{ padding: '8px 16px', justifyContent: 'space-between' }}
         >
-          <StyledBadge badgeContent={count} color="warning">
-            <ShoppingCartIcon />
-          </StyledBadge>
-        </Button>
-      </CardActions>
+          <div className={styles.text}>
+            <span className={styles.top}>
+              от {oneByOne ? price : price / 10} ₽
+            </span>
+            <span className={styles.bottom}>
+              за {oneByOne ? 'штуку' : '100 гр'}
+            </span>
+          </div>
+          <Button
+            sx={{
+              borderRadius: '1rem',
+              color: '#ea8e2a',
+            }}
+            color="yellow"
+            variant="outlined"
+            onClick={handleAdd}
+          >
+            <StyledBadge badgeContent={count} color="warning">
+              <ShoppingCartIcon />
+            </StyledBadge>
+          </Button>
+        </CardActions>
+      </div>
     </Card>
   );
 };
