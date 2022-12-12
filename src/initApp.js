@@ -1,5 +1,8 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material';
+import { Provider } from 'react-redux';
+
+import store from './redux/store';
 import App from './App';
 
 const theme = createTheme({
@@ -46,9 +49,11 @@ const theme = createTheme({
 
 const initApp = () => {
   const app = (
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <App />
+      </ThemeProvider>
+    </Provider>
   );
   return app;
 };
