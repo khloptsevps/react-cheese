@@ -1,19 +1,20 @@
-/* eslint-disable no-unused-vars */
 import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
 const { REACT_APP_API_KEY } = process.env;
 
 const firebaseConfig = {
   apiKey: REACT_APP_API_KEY,
-  authDomain: 'react-cheese.firebaseapp.com',
-  projectId: 'react-cheese',
-  storageBucket: 'react-cheese.appspot.com',
-  messagingSenderId: '788985549023',
-  appId: '1:788985549023:web:0a1644841ecb124846996a',
-  measurementId: 'G-F9F4YZK8EC',
+  authDomain: 'craft-lab-khv.firebaseapp.com',
+  projectId: 'craft-lab-khv',
+  storageBucket: 'craft-lab-khv.appspot.com',
+  messagingSenderId: '942693787510',
+  appId: '1:942693787510:web:d08ab2c15e3a1283d9fc57',
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
 
-// TODO npm install firebase
+const db = getFirestore(firebaseApp);
+
+export default db;
