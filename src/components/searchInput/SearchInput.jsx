@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import styles from './SearchInput.module.scss';
 import searchIcon from '../../assets/svg/search-icon.svg';
 import resetSearchIcon from '../../assets/svg/search-icon-reset.svg';
 
+import { setSearch } from '../../redux/slices/filterSlice';
+
 const SearchInput = () => {
-  const [value, setValue] = useState();
+  const dispatch = useDispatch();
+  const [value, setValue] = useState('');
 
   const handleInput = (e) => {
     setValue(e.target.value);
+    dispatch(setSearch(e.target.value));
   };
 
   return (
