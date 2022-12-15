@@ -15,15 +15,25 @@ import styles from './Home.module.scss';
 
 const HomePage = () => {
   const { items, process } = useSelector(selectProducts);
-  const { sort } = useSelector(selectFilter);
+  const { sort, search } = useSelector(selectFilter);
 
   const dispatch = useDispatch();
 
   React.useEffect(() => {
     const { sortBy, order } = sort;
     dispatch(fetchProducts({ sortBy, order }));
-    window.scrollTo(0, 0);
   }, [dispatch, sort]);
+
+  const renderSkeletons = Array(6)
+    .fill()
+    .map((_item, i) => <Skeleton key={i} />);
+
+  const renderCards = items
+    .filter(({ name }) => {
+      const nameToLowerCase = name.toLowerCase();
+      return nameToLowerCase.startsWith(search);
+    })
+    .map((item) => <ProductCard key={item.id} {...item} />);
 
   return (
     <div className={styles.content}>
@@ -35,11 +45,7 @@ const HomePage = () => {
         <div className={styles.title}>
           <Title />
           <div className={styles.cards}>
-            {process === 'success'
-              ? items.map((item) => <ProductCard key={item.id} {...item} />)
-              : Array(6)
-                  .fill()
-                  .map((_item, i) => <Skeleton key={i} />)}
+            {process === 'success' ? renderCards : renderSkeletons}
           </div>
         </div>
       </div>
