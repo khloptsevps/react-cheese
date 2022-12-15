@@ -9,10 +9,14 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../redux/slices/modalSlice';
+
 import styles from './ProductCard.module.scss';
 
-const ProductCard = ({ name, imageLink, price, oneByOne }) => {
+const ProductCard = ({ id, name, imageLink, price, oneByOne }) => {
   const [count, setCount] = React.useState(0);
+  const dispatch = useDispatch();
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -23,12 +27,21 @@ const ProductCard = ({ name, imageLink, price, oneByOne }) => {
     },
   }));
 
-  const handleAdd = () => {
+  const handleAdd = (e) => {
+    e.stopPropagation();
     setCount(count + 1);
   };
 
+  const handleClickCard = () => {
+    dispatch(openModal({ id }));
+  };
+
   return (
-    <Card sx={{ width: 300, height: 380 }} className={styles.card}>
+    <Card
+      sx={{ width: 300, height: 380 }}
+      className={styles.card}
+      onClick={handleClickCard}
+    >
       <CardMedia
         component="img"
         image={imageLink}
@@ -41,9 +54,6 @@ const ProductCard = ({ name, imageLink, price, oneByOne }) => {
           <Typography gutterBottom variant="h5" component="h2">
             {name}
           </Typography>
-          {/* <Typography color="text.secondary" variant="p">
-          {description}
-        </Typography> */}
         </CardContent>
         <CardActions
           sx={{ padding: '8px 16px', justifyContent: 'space-between' }}
