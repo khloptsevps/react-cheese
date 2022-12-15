@@ -13,7 +13,7 @@ const Cart = () => (
             <img src={cartIcon} alt="icon_cart" className={styles.icon} />
             <span className={styles.count}>5</span>
           </div>
-          <span className={styles.price}>1 500 руб.</span>
+          <span className={styles.price}>1 500 ₽</span>
         </a>
       </div>
     </div>
