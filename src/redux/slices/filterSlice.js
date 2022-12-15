@@ -7,6 +7,8 @@ const initialState = {
     sortBy: 'price',
     order: 'asc',
   },
+  // default search value
+  search: '',
 };
 
 const filter = createSlice({
@@ -16,10 +18,14 @@ const filter = createSlice({
     setSort(state, { payload }) {
       return { ...state, sort: payload };
     },
+    setSearch(state, { payload }) {
+      const normalizedPayload = payload.toLowerCase();
+      return { ...state, search: normalizedPayload };
+    },
   },
 });
 
 export const selectFilter = (state) => state.filter;
 
-export const { setSort } = filter.actions;
+export const { setSort, setSearch } = filter.actions;
 export default filter.reducer;
