@@ -10,8 +10,8 @@ export const fetchProducts = createAsyncThunk(
   'productSlice/fetchProducts',
   async ({ sortBy, order }) => {
     try {
-      const request = query(productsCollection, orderBy(sortBy, order));
-      const productsSnapshot = await getDocs(request);
+      const productsQuery = query(productsCollection, orderBy(sortBy, order));
+      const productsSnapshot = await getDocs(productsQuery);
       const products = firebaseDocsToObjects(productsSnapshot, sortBy, order);
       return products;
     } catch (error) {
@@ -40,8 +40,8 @@ const productSlice = createSlice({
       const newState = { ...state, process: 'success', items: payload };
       return newState;
     },
-    [fetchProducts.rejected]: (state) => {
-      const newState = { ...state, process: 'failed', items: [] };
+    [fetchProducts.rejected]: (state, { payload }) => {
+      const newState = { ...state, process: 'failed', items: payload };
       return newState;
     },
   },
