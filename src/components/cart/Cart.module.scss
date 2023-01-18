@@ -1,50 +1,30 @@
-@import '../../sass/abstracts/variables.scss';
-
-.root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.items {
-  display: flex;
-  align-items: center;
-}
-
-.box {
-  display: inline-block;
-  font-size: 5rem;
-}
-
+// #ea8e2a
 .link {
-  display: inline-flex;
-  text-decoration: none;
-  color: $very-dark-blue-text;
-}
-
-.iconBox {
-  position: relative;
-  margin-right: 2.5rem;
-}
-
-.icon {
-  height: 2.8rem;
-}
-
-.count {
   display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  position: absolute;
-  padding: 0.4rem 0.8rem;
-  font-weight: 600;
-  background-color: #ffe405;
-  top: -1.6rem;
-  right: -1.8rem;
-}
-
-.price {
-  font-size: 2rem;
-  font-weight: 600;
+  border-radius: 3rem;
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  color: white;
+  line-height: 2.3rem;
+  background-color: #ed6c03;
+  transition: background-color 0.15s ease-in-out;
+  &:hover {
+    background-color: #db6401;
+  }
+  &:active {
+    background-color: #db6401;
+    transform: translateY(0.1rem);
+  }
+  .delimiter {
+    width: 1px;
+    height: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin-left: 1.4rem;
+    margin-right: 1.4rem;
+  }
+  span {
+    font-size: 17px;
+    font-weight: 600;
+  }
 }
