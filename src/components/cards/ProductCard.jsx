@@ -20,7 +20,7 @@ import styles from './ProductCard.module.scss';
 const ProductCard = ({ id, name, imageLink, price, oneByOne }) => {
   const [count, setCount] = React.useState(0);
   const { ref, inView } = useInView({
-    threshold: 0.2,
+    threshold: 0.25,
     triggerOnce: true,
   });
   const dispatch = useDispatch();
