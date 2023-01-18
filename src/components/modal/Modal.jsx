@@ -26,8 +26,6 @@ const Modal = () => {
     dispatch(closeModal());
   };
 
-  console.count();
-
   if (!currentProduct) {
     return null;
   }
@@ -39,20 +37,28 @@ const Modal = () => {
       keepMounted
       onClose={handleClose}
       aria-describedby="modal-dialog-slide-description"
+      maxWidth="md"
     >
-      <DialogTitle>{currentProduct.name}</DialogTitle>
-      <DialogContent>
-        <DialogContentText id="modal-dialog-slide-description">
-          {currentProduct.description}
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={handleClose}>Закрыть</Button>
-      </DialogActions>
+      {isOpen && (
+        <React.Fragment>
+          <DialogTitle>{currentProduct.name}</DialogTitle>
+          <DialogContent>
+            {/* <img src={currentProduct.imageLink} alt="test" height={300} /> */}
+            <DialogContentText id="modal-dialog-slide-description">
+              {currentProduct.description}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Закрыть</Button>
+          </DialogActions>
+        </React.Fragment>
+      )}
     </Dialog>
   );
 };
 
 Transition.displayName = 'Modal slide down';
+
+// TODO: Довести до ума модальное окно
 
 export default Modal;
