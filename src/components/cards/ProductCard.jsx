@@ -11,14 +11,20 @@ import { styled } from '@mui/material/styles';
 
 import { useInView } from 'react-intersection-observer';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Skeleton } from '@mui/material';
+
 import { openModal } from '../../redux/slices/modalSlice';
+import { addItem, selectCart } from '../../redux/slices/cartSlice';
 
 import styles from './ProductCard.module.scss';
 
 const ProductCard = ({ id, name, imageLink, price, oneByOne }) => {
-  const [count, setCount] = React.useState(0);
+  const { items } = useSelector(selectCart);
+
+  const findItem = items.find((item) => item.id === id);
+  const count = findItem ? findItem.count : 0;
+
   const { ref, inView } = useInView({
     threshold: 0.25,
     triggerOnce: true,
@@ -36,7 +42,13 @@ const ProductCard = ({ id, name, imageLink, price, oneByOne }) => {
 
   const handleAdd = (e) => {
     e.stopPropagation();
-    setCount(count + 1);
+    const cartItem = {
+      id,
+      name,
+      imageLink,
+      price,
+    };
+    dispatch(addItem(cartItem));
   };
 
   const handleClickCard = () => {
@@ -76,9 +88,7 @@ const ProductCard = ({ id, name, imageLink, price, oneByOne }) => {
           sx={{ padding: '8px 16px', justifyContent: 'space-between' }}
         >
           <div className={styles.text}>
-            <span className={styles.top}>
-              от {oneByOne ? price : price / 10} ₽
-            </span>
+            <span className={styles.top}>от {price} ₽</span>
             <span className={styles.bottom}>
               за {oneByOne ? 'штуку' : '100 гр'}
             </span>
