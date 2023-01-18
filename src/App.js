@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 
 import Header from './components/header';
 import Modal from './components/modal/Modal';
+import CartPage from './pages/cart/CartPage';
 import Home from './pages/home/Home';
 import NotFound from './pages/notFound/NotFound';
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: '/cart',
+    element: <CartPage />,
+  },
 ]);
 
 const App = () => (
@@ -35,5 +40,3 @@ const App = () => (
 );
 
 export default App;
-
-// TODO: подумать куда поместить Modal;
