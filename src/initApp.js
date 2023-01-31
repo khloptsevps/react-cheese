@@ -24,6 +24,12 @@ const theme = createTheme({
     yellow: {
       main: '#f4b204',
     },
+    orange: {
+      main: '#ed6c03',
+    },
+    gray: {
+      main: '#938e88',
+    },
   },
   components: {
     MuiChip: {
