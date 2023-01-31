@@ -1,0 +1,47 @@
+.item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 2rem;
+  border-top: 1px solid #e2e2e2;
+}
+
+.img {
+  width: 10%;
+  margin-right: 1.5rem;
+  & > img {
+    width: 8rem;
+    border-radius: 1rem;
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  width: 40%;
+}
+
+.count {
+  width: 14%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & > b {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32%;
+  & > b {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.06rem;
+  }
+}
+
+//13% 33% 4%
