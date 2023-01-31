@@ -1,0 +1,144 @@
+.container {
+  max-width: 90rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  & > h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+}
+
+.clear {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  & > span {
+    font-size: 1.6rem;
+  }
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  width: 20.5rem;
+  align-items: center;
+  border-radius: 3rem;
+  padding: 1.5rem 2rem;
+  text-decoration: none;
+  color: white;
+  line-height: 2.3rem;
+  background-color: #ed6c03;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  border: 1px solid transparent;
+  &:hover {
+    background-color: #db6401;
+  }
+  &:active {
+    background-color: #db6401;
+    transform: translateY(0.1rem);
+  }
+  span {
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
+
+.back {
+  color: #c3c3c3;
+  border: 1px solid;
+  background-color: transparent;
+  border-color: #ddd;
+  &:hover {
+    background-color: #111;
+    border-color: #111;
+    color: #f6f6f6;
+  }
+  &:active {
+    background-color: #111;
+    transform: translateY(0.1rem);
+  }
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  & > span {
+    font-size: 2.2rem;
+    font-weight: 400;
+    & > b {
+      font-weight: 600;
+      font-size: 2.2rem;
+    }
+    &:last-of-type {
+      & > b {
+        color: #ea8e2a;
+      }
+    }
+  }
+}
+
+// cart items
+.items {
+  margin-bottom: 2.5rem;
+}
+.img {
+  & > img {
+    width: 8rem;
+  }
+}
+
+.empty {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+  & > h4 {
+    font-size: 3.2rem;
+    font-weight: 600;
+  }
+  & > p {
+    color: #777777;
+    margin-bottom: 3rem;
+  }
+  & > img {
+    display: block;
+    margin: 0 auto;
+    width: 25rem;
+    margin-bottom: 3rem;
+  }
+  & > a {
+    display: inline-block;
+    width: 24rem;
+    background-color: #111;
+    color: #f6f6f6;
+    &:hover {
+      background-color: #3d3d3d;
+    }
+  }
+}
