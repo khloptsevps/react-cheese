@@ -6,8 +6,8 @@ import Typography from '@mui/material/Typography';
 
 import { Link } from 'react-router-dom';
 
-import { useSelector } from 'react-redux';
-import { selectCart } from '../../redux/slices/cartSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCart, resetCart } from '../../redux/slices/cartSlice';
 
 import CartItem from '../../components/cartItem/CartItem';
 
@@ -15,8 +15,15 @@ import emptyCart from '../../assets/img/empty-cart.png';
 import styles from './CartPage.module.scss';
 
 const CartPage = () => {
+  const dispatch = useDispatch();
+
   const { totalPrice, items } = useSelector(selectCart);
   const itemsCount = items.reduce((acc, { count }) => count + acc, 0);
+
+  const handleResetCart = () => {
+    dispatch(resetCart());
+  };
+
   if (!items.length) {
     return (
       <div className={styles.container}>
@@ -45,14 +52,14 @@ const CartPage = () => {
             <ShoppingBasketOutlinedIcon className="mr-10" />
             <h2>Корзина</h2>
           </div>
-          <button className={styles.clear}>
+          <button className={styles.clear} onClick={handleResetCart}>
             <DeleteForeverIcon fontSize="small" className="mr-10" />
             <span>Очистить корзину</span>
           </button>
         </div>
         <div className={styles.items}>
-          {items.map(({ id, ...item }) => (
-            <CartItem key={id} item={item} />
+          {items.map(({ ...item }) => (
+            <CartItem key={item.id} item={item} />
           ))}
         </div>
         <div className="cart-bottom">
