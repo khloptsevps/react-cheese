@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 
 import Typography from '@mui/material/Typography';
@@ -6,10 +7,36 @@ import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOu
 import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 
+import { useDispatch } from 'react-redux';
+
+import {
+  addItem,
+  removeItemOne,
+  removeItem,
+} from '../../redux/slices/cartSlice.js';
+
 import styles from './CartItem.module.scss';
 
 const CartItem = ({ item }) => {
+  const dispatch = useDispatch();
   const { name, imageLink, price, count } = item;
+
+  const handleAddItem = () => {
+    dispatch(addItem(item));
+  };
+
+  const handleRemoveItemOne = () => {
+    if (item.count > 1) {
+      dispatch(removeItemOne(item));
+    } else {
+      dispatch(removeItem(item));
+    }
+  };
+
+  const handleRemoveItem = () => {
+    dispatch(removeItem(item));
+  };
+
   return (
     <div className={styles.item}>
       <div className={styles.img}>
@@ -21,19 +48,31 @@ const CartItem = ({ item }) => {
         </Typography>
       </div>
       <div className={styles.count}>
-        <IconButton aria-label="add to cart" color="orange">
-          <AddCircleOutlineOutlinedIcon sx={{ fontSize: '3.2rem' }} />
+        <IconButton
+          aria-label="remove one item from cart"
+          color="orange"
+          onClick={handleRemoveItemOne}
+        >
+          <RemoveCircleOutlineOutlinedIcon sx={{ fontSize: '3.2rem' }} />
         </IconButton>
         <b>{count}</b>
-        <IconButton aria-label="remove one from cart" color="orange">
-          <RemoveCircleOutlineOutlinedIcon sx={{ fontSize: '3.2rem' }} />
+        <IconButton
+          aria-label="add to cart"
+          color="orange"
+          onClick={handleAddItem}
+        >
+          <AddCircleOutlineOutlinedIcon sx={{ fontSize: '3.2rem' }} />
         </IconButton>
       </div>
       <div className={styles.price}>
         <b>{price} ₽</b>
       </div>
       <div className="remove">
-        <IconButton aria-label="remove all from cart" color="gray">
+        <IconButton
+          aria-label="remove item from cart"
+          color="gray"
+          onClick={handleRemoveItem}
+        >
           <CancelOutlinedIcon sx={{ fontSize: '3.2rem' }} />
         </IconButton>
       </div>
