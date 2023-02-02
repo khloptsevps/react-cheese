@@ -67,7 +67,7 @@ const CartItem = ({ item }) => {
       <div className={styles.price}>
         <b>{price} ₽</b>
       </div>
-      <div className="remove">
+      <div className={styles.remove}>
         <IconButton
           aria-label="remove item from cart"
           color="gray"
