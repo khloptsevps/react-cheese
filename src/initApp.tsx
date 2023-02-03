@@ -2,6 +2,8 @@ import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { Provider } from 'react-redux';
 
+import { orange } from '@mui/material/colors';
+
 import store from './redux/store';
 import App from './App';
 
@@ -21,14 +23,8 @@ const theme = createTheme({
     primary: {
       main: 'rgba(244, 178, 4)',
     },
-    yellow: {
-      main: '#f4b204',
-    },
-    orange: {
-      main: '#ed6c03',
-    },
-    gray: {
-      main: '#938e88',
+    secondary: {
+      main: orange[700],
     },
   },
   components: {
@@ -47,6 +43,16 @@ const theme = createTheme({
         root: {
           height: 250,
           objectFit: 'cover',
+        },
+      },
+    },
+    MuiBadge: {
+      styleOverrides: {
+        badge: {
+          right: '-1px',
+          top: 13,
+          padding: '6px',
+          border: '1px solid #FFF',
         },
       },
     },
