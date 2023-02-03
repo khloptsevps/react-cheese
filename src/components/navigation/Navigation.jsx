@@ -7,8 +7,8 @@ const Navigation = () => (
   <nav className={styles.root}>
     <ul className={styles.list}>
       <li className={styles.item}>
-        <Link to="/about" className={styles.link}>
-          O HAC
+        <Link to="/" className={styles.link}>
+          ГЛАВНАЯ
         </Link>
       </li>
       <li className={styles.item}>
@@ -17,8 +17,8 @@ const Navigation = () => (
         </Link>
       </li>
       <li className={styles.item}>
-        <Link to="/contacts" className={styles.link}>
-          КОНТАКТЫ
+        <Link to="/about" className={styles.link}>
+          O HAC
         </Link>
       </li>
     </ul>
