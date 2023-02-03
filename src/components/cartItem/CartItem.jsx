@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOutlineOutlined';
 import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
+import { grey } from '@mui/material/colors';
 
 import { useDispatch } from 'react-redux';
 
@@ -50,7 +51,7 @@ const CartItem = ({ item }) => {
       <div className={styles.count}>
         <IconButton
           aria-label="remove one item from cart"
-          color="orange"
+          color="secondary"
           onClick={handleRemoveItemOne}
         >
           <RemoveCircleOutlineOutlinedIcon sx={{ fontSize: '3.2rem' }} />
@@ -58,7 +59,7 @@ const CartItem = ({ item }) => {
         <b>{count}</b>
         <IconButton
           aria-label="add to cart"
-          color="orange"
+          color="secondary"
           onClick={handleAddItem}
         >
           <AddCircleOutlineOutlinedIcon sx={{ fontSize: '3.2rem' }} />
@@ -70,7 +71,7 @@ const CartItem = ({ item }) => {
       <div className={styles.remove}>
         <IconButton
           aria-label="remove item from cart"
-          color="gray"
+          color={grey[500]}
           onClick={handleRemoveItem}
         >
           <CancelOutlinedIcon sx={{ fontSize: '3.2rem' }} />
