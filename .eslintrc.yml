@@ -33,3 +33,4 @@ rules:
     [2, { 'namedComponents': 'arrow-function' }]
   react/jsx-filename-extension:
     [1, { 'extensions': ['.js', '.jsx', '.ts', '.tsx'] }]
+  '@typescript-eslint/no-explicit-any': 'off'
