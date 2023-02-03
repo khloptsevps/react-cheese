@@ -7,7 +7,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
-import { styled } from '@mui/material/styles';
 
 import { useInView } from 'react-intersection-observer';
 
@@ -30,15 +29,6 @@ const ProductCard = ({ id, name, imageLink, price, oneByOne }) => {
     triggerOnce: true,
   });
   const dispatch = useDispatch();
-
-  const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-      right: -1,
-      top: 13,
-      border: `1px solid ${theme.palette.background.paper}`,
-      padding: '6px',
-    },
-  }));
 
   const handleAdd = (e) => {
     e.stopPropagation();
@@ -98,13 +88,13 @@ const ProductCard = ({ id, name, imageLink, price, oneByOne }) => {
               borderRadius: '1rem',
               color: '#ea8e2a',
             }}
-            color="yellow"
+            color="primary"
             variant="outlined"
             onClick={handleAdd}
           >
-            <StyledBadge badgeContent={count} color="warning">
+            <Badge badgeContent={count} color="warning">
               <ShoppingCartIcon />
-            </StyledBadge>
+            </Badge>
           </Button>
         </CardActions>
       </div>
