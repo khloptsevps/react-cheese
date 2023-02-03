@@ -7,11 +7,11 @@ import resetSearchIcon from '../../assets/svg/search-icon-reset.svg';
 
 import { setSearch } from '../../redux/slices/filterSlice';
 
-const SearchInput = () => {
+const SearchInput: React.FC = () => {
   const dispatch = useDispatch();
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<string>('');
 
-  const handleInput = (e) => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
     dispatch(setSearch(e.target.value));
   };

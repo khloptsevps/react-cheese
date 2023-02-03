@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './Navigation.module.scss';
 
-const Navigation = () => (
+const Navigation: React.FC = () => (
   <nav className={styles.root}>
     <ul className={styles.list}>
       <li className={styles.item}>

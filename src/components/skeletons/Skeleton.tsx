@@ -6,7 +6,7 @@ import Skeleton from '@mui/material/Skeleton';
 
 import styles from './Skeleton.module.scss';
 
-const Skeletons = () => (
+const Skeletons: React.FC = () => (
   <Card sx={{ width: 300, height: 380 }} className={styles.root}>
     <Skeleton variant="rectangular" width={300} height={200} animation="wave" />
     <div>

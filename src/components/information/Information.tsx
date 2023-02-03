@@ -4,7 +4,7 @@ import telegramIcon from '../../assets/svg/telegram-icon.svg';
 
 import styles from './Information.module.scss';
 
-const Information = () => (
+const Information: React.FC = () => (
   <div className={styles.info}>
     <div className={styles.contacts}>
       <div className={styles.phone}>

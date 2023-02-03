@@ -10,7 +10,7 @@ import Cart from '../cart/Cart';
 
 import styles from './Header.module.scss';
 
-const Header = () => (
+const Header: React.FC = () => (
   <header className={styles.root}>
     <div className="header__content">
       <div className={styles.top}>
