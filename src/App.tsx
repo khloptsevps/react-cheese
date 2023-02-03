@@ -5,6 +5,7 @@ import Header from './components/header';
 import Modal from './components/modal/Modal';
 import CartPage from './pages/cart/CartPage';
 import Home from './pages/home/Home';
+import AboutPage from './pages/about/AboutPage';
 import NotFound from './pages/notFound/NotFound';
 
 const Layout = () => (
@@ -27,6 +28,14 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <CartPage />,
+      },
+      {
+        path: '/about',
+        element: <AboutPage />,
+      },
+      {
+        path: '/delivery',
+        element: <AboutPage />,
       },
     ],
   },
